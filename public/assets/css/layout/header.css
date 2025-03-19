@@ -1,0 +1,194 @@
+#header {
+    background: #EAEEFE;
+    height: 81px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Khi cuộn xuống, header sẽ trong suốt */
+#header.scrolled {
+    background: rgba(234, 238, 254, 0.5); /* Màu trong suốt */
+    backdrop-filter: blur(10px); /* Làm mờ nền phía sau (tùy chọn) */
+}
+
+
+@keyframes fadeHeader {
+    0% {
+        background: rgba(234, 238, 254, 1);
+    }
+    100% {
+        background: rgba(234, 238, 254, 0.2);
+        backdrop-filter: blur(10px);
+    }
+}
+
+:root:has(body:has(:not(:nth-child(1)))) #header {
+    animation: fadeHeader 0.3s forwards;
+}
+
+body {
+    padding-top: 81px;
+}
+#header .container {
+    gap: 8px;
+}
+
+.navbar .container .navbar-brand img {
+    height: 64px;
+}
+
+/* Định dạng menu */
+#menu {
+    position: relative;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu .nav-item {
+    position: relative;
+}
+/* Định dạng link */
+#menu .nav-link {
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+    color: #949494;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease color;
+}
+
+/* Hiệu ứng chấm tròn */
+#menu .nav-link::before,
+#menu .nav-link::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+}
+
+#menu .nav-link::before {
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+#menu .nav-link::after {
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+}
+
+/* Chấm tròn cho từng menu */
+#menu .nav-item:nth-child(1) .nav-link::before { background-color: yellow; }
+#menu .nav-item:nth-child(1) .nav-link::after { background-color: red; }
+
+#menu .nav-item:nth-child(2) .nav-link::before { background-color: #00e2ff; }
+#menu .nav-item:nth-child(2) .nav-link::after { background-color: #89ff00; }
+
+#menu .nav-item:nth-child(3) .nav-link::before { background-color: purple; }
+#menu .nav-item:nth-child(3) .nav-link::after { background-color: palevioletred; }
+
+#menu .nav-item:nth-child(4) .nav-link::before { background-color: orange; }
+#menu .nav-item:nth-child(4) .nav-link::after { background-color: cyan; }
+
+
+/* Hover hiệu ứng */
+#menu .nav-link:hover {
+    color: black;
+}
+
+#menu .nav-link:hover::before,
+#menu .nav-link:hover::after {
+    transform: scale(1);
+}
+
+#indicator {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 60px;
+    height: 3px;
+    background-color: #949494;
+    border-radius: 5px;
+    transition: 0.3s ease all;
+}
+
+.nav-item:nth-child(1):hover ~ #indicator {
+    left: 5%;
+    background: linear-gradient(130deg, yellow, red);
+}
+
+.nav-item:nth-child(2):hover ~ #indicator {
+    left: 31%;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+.nav-item:nth-child(3):hover ~ #indicator {
+    left: 57%;
+    background: linear-gradient(130deg, purple, palevioletred);
+}
+
+.nav-item:nth-child(4):hover ~ #indicator {
+    left: 83%;
+    background: linear-gradient(130deg, orange, cyan);
+}
+@media (max-width: 991px) {
+    #indicator {
+        display: none;
+    }
+}
+
+.btn {
+    color: #949494;
+    position: relative;
+
+    @media(min-width: 600px) {
+        margin: 0 1em 2em;
+    }
+
+    &:hover { text-decoration: none; }
+
+}.btn-1 {
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ ;
+     text-align: right;
+     font-weight: bold;
+     svg {
+         height: 38px;
+         left: 0;
+         position: absolute;
+         top: 0;
+         width: 100%;
+     }
+
+     rect {
+         fill: none;
+         stroke: black;
+         stroke-width: 2;
+         stroke-dasharray: 422, 0;
+         transition: all 0.35s linear;
+     }
+ }
+
+.btn-1:hover {
+    color: black;
+    rect {
+        stroke: red;
+        stroke-width: 5;
+        stroke-dasharray: 15, 310;
+        stroke-dashoffset: 48;
+        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+

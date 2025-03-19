@@ -1,0 +1,20 @@
+.hero{
+    height: 710px;
+    background: linear-gradient(180deg, #EAEEFE, #183EC2);
+}
+.hero .img1{
+    width: 648px;
+    height: auto;
+}
+.hero .img2{
+    width: 216px;
+    height: 197px;
+    position: absolute;
+    margin: 0 45%;
+}
+.content{
+    width: 511px;
+    height: 448px;
+    margin-top: 115px;
+    margin-left: 150px;
+}
