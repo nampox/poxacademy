@@ -1,173 +1,75 @@
-h4 {
-    font-size:  24px;
-    font-weight:  600;
-    color:  #000;
-    opacity:  .85;
+.modal-login {
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
 }
-label {
-    font-size:  12.5px;
-    color:  #000;
-    opacity:  .8;
-    font-weight:  400;
+#chk {
+    display: none;
 }
-form {
-    padding:  40px 30px;
-    background:  #fefefe;
-    display:  flex;
-    flex-direction:  column;
-    align-items:  flex-start;
-    padding-bottom:  20px;
-    width:  300px;
-    h4 {
-        margin-bottom:  20px;
-        span {
-            font-weight:  700;
-        }
-    }
-    p {
-        line-height:  155%;
-        margin-bottom:  5px;
-        font-size:  14px;
-        color:  #000;
-        opacity:  .65;
-        font-weight:  400;
-        max-width:  200px;
-    }
+.login {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
-a.discrete {
-    font-size:  14px;
-    border-bottom:  solid 1px;
-    padding-bottom:  4px;
-    margin-left:  auto;
-    font-weight:  300;
-    transition:  all .3s ease;
-    margin-top:  40px;
-    &:hover {
-        border-bottom:  solid 1px;
-    }
+.signup label {
+    color: black;
+    transform: scale(.6);
 }
-button {
-    -webkit-appearance:  none;
-    width:  auto;
-    min-width:  100px;
-    border-radius:  24px;
-    text-align:  center;
-    padding:  15px 40px;
-    margin-top:  5px;
-    color:  #fff;
-    font-size:  14px;
-    margin-left:  auto;
-    font-weight:  500;
-    box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13);
-    border:  none;
-    transition:  all .3s ease;
-    outline: 0;
-    &:hover {
-        transform:  translateY(-3px);
-        box-shadow:  0 2px 6px -1px;
-        &:active {
-            transform:  scale(.99);
-        }
-    }
+
+.modal-login .login label,
+.modal-login .signup label{
+    color: #573b8a;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
 }
-input {
-    font-size:  16px;
-    padding:  20px 0px;
-    height:  56px;
-    border:  none;
-    border-bottom:  solid 1px rgba(0,0,0,.1);
-    background:  #fff;
-    width:  280px;
-    box-sizing:  border-box;
-    transition:  all .3s linear;
-    color:  #000;
-    font-weight:  400;
-    -webkit-appearance:  none;
-    &:focus {
-        border-bottom:  solid 1px;
-        outline: 0;
-    }
+.button-login {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
 }
-.floating-label {
-    position:  relative;
-    margin-bottom:  10px;
-    width:  100%;
-    label {
-        position:  absolute;
-        top: calc(50% - 7px);
-        left:  0;
-        opacity:  0;
-        transition:  all .3s ease;
-        padding-left:  44px;
-    }
-    input {
-        width:  calc(100% - 44px);
-        margin-left:  auto;
-        display:  flex;
-    }
-    .icon {
-        position:  absolute;
-        top:  0;
-        left:  0;
-        height:  56px;
-        width:  44px;
-        display:  flex;
-        svg {
-            height:  30px;
-            width:  30px;
-            margin:  auto;
-            opacity:  .15;
-            transition:  all .3s ease;
-            path {
-                transition:  all .3s ease;
-            }
-        }
-    }
-    input:not(:placeholder-shown) {
-        padding:  28px 0 12px 0;
-    }
-    input:not(:placeholder-shown) + label {
-        transform:  translateY(-10px);
-        opacity:  .7;
-    }
-    input:valid:not(:placeholder-shown) + label + .icon {
-        svg {
-            opacity:  1;
-        }
-    }
-    input:not(:valid):not(:focus) + label + .icon {
-        animation-name: shake-shake;
-        animation-duration: .3s;
-    }
+
+.button-login:hover {
+    background: #6d44b8;
 }
-.st01 {
-    fill: #fff;
+.signup {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-75px);
+    transition: .5s ease-in-out;
 }
-@keyframes shake-shake {
-    100% { transform: translateX(0px);}
+#chk:checked ~ .signup {
+    transform: translateY(-450px);
 }
-.session {
-    display:  flex;
-    flex-direction:  row;
-    width:  auto;
-    height:  auto;
-    margin:  auto auto;
-    background:  #ffffff;
-    border-radius:  4px;
-    box-shadow:  0 2px 6px -1px rgba(0,0,0,.12);
+
+#chk:checked ~ .signup label {
+    transform: scale(1);
 }
-.left {
-    width:  220px;
-    height:  auto;
-    min-height:  100%;
-    position:  relative;
-    background-image: url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-    background-size:  cover;
-    border-top-left-radius:  4px;
-    border-bottom-left-radius:  4px;
-    svg {
-        height:  40px;
-        width:  auto;
-        margin:  20px;
-    }
+
+#chk:checked ~ .login label {
+    color: black;
+    transform: scale(.6);
+}
+.auth-form input {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
 }

@@ -25,8 +25,20 @@
                 <div id="indicator"></div>
             </ul>
             @if(auth()->check())
-                <p>Chào, {{ auth()->user()->name }}</p>
-                <a href="{{ route('logout') }}">Đăng xuất</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20({{auth()->user()->id}}).jpg"
+                                 class="rounded-circle" height="30" alt="Avatar" loading="lazy"/>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="profile/{{auth()->user()->id}}">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
             @else
                 <a class="btn btn-1 m-0 d-flex" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
                     <svg>

@@ -18,13 +18,14 @@
 </head>
 <style>
     .flash-container {
+        z-index: 9999;
         position: fixed;
         top: 20px;
         right: 20px;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        width: 300px; /* Set a fixed width for the container */
+        width: 300px;
     }
 
     .flash-message {
