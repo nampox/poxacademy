@@ -109,8 +109,6 @@
 </div>
 
 <script>
-    const OPENROUTER_API_KEY = "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";
-    const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
     function toggleChat() {
         const container = document.getElementById('chatContainer');
         const button = document.getElementById('chatButton');
@@ -139,10 +137,10 @@
         userInput.value = '';
 
         try {
-            const response = await fetch(OPENROUTER_API_URL, {
+            const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+                    "Authorization": `Bearer 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`,
                     "HTTP-Referer": window.location.href,
                     "X-Title": "Chatbot",
                     "Content-Type": "application/json"
