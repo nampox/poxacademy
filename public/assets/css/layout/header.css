@@ -156,11 +156,11 @@ body {
 
     &:hover { text-decoration: none; }
 
-}.btn-1 {
+}
+.btn-1 {
      align-items: center;
      justify-content: center;
      position: relative;
- ;
      text-align: right;
      font-weight: bold;
      svg {
@@ -178,7 +178,7 @@ body {
          stroke-dasharray: 422, 0;
          transition: all 0.35s linear;
      }
- }
+}
 
 .btn-1:hover {
     color: black;
@@ -190,5 +190,333 @@ body {
         transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
     }
 }
+.dark-mode {
+    background-color: black;
+    color: white;
+    .navbar-brand{
+        color: white;
+    }
+    .btn-1:hover {
+        color: white;
+        rect {
+            stroke: red;
+            stroke-width: 5;
+            stroke-dasharray: 15, 310;
+            stroke-dashoffset: 48;
+            transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+    }
+    #menu .nav-link:hover {
+        color: white;
+    }
+    #header{
+        background: black;
+    }
+    .hero{
+        background: linear-gradient(180deg, black, #183EC2);
+    }
 
+    .btn-1 {
+        rect {
+            fill: none;
+            stroke: white;
+        }
+    }
+}
 
+/*btn sáng tối*/
+.btn_toggle{
+    width: 40px;
+    height: 20px;
+}
+#hide-checkbox {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.toggle {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: #211042;
+    border-radius: 50px;
+    transition: 500ms;
+    overflow: hidden;
+}
+
+.toggle-button {
+    position: absolute;
+    display: inline-block;
+    top: 7%;
+    left: 3%;
+    width: 43%;
+    height: 86%;
+    border-radius: 50%;
+    background: #FAEAF1;
+    overflow: hidden;
+    box-shadow: 0 0 35px 4px rgba(255, 255, 255);
+    transition: all 500ms ease-out;
+}
+
+.crater {
+    position: absolute;
+    display: inline-block;
+    background: #FAEAF1;
+    border-radius: 50%;
+    transition: 500ms;
+}
+
+.crater-1 {
+    background: #FFFFF9;
+    width: 100%;
+    height: 100%;
+    left: 10%;
+    bottom: 10%;
+}
+
+.crater-2 {
+    width: 23%;
+    height: 23%;
+    top: -5%;
+    left: 45%;
+}
+
+.crater-3 {
+    width: 20%;
+    height: 21%;
+    top: 23%;
+    right: -2%;
+}
+
+.crater-4 {
+    width: 11%;
+    height: 11%;
+    top: 32%;
+    left: 36%;
+}
+
+.crater-5 {
+    width: 17%;
+    height: 17%;
+    top: 52%;
+    left: 56%;
+}
+
+.crater-6 {
+    width: 11%;
+    height: 11%;
+    top: 55%;
+    left: 20%;
+}
+
+.crater-7 {
+    width: 14%;
+    height: 14%;
+    bottom: 7%;
+    left: 45%;
+}
+
+.star {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    background: #FFF;
+    box-shadow: 1px 0 2px 2px rgba(255, 255, 255);
+}
+
+.star-1 {
+    width: 3%;
+    height: 6%;
+    right: 42%;
+    bottom: 40%;
+}
+
+.star-2 {
+    width: 4%;
+    height: 8%;
+    right: 35%;
+    top: 10%;
+}
+
+.star-3 {
+    width: 2%;
+    height: 4%;
+    right: 28%;
+    bottom: 15%;
+}
+
+.star-4 {
+    width: 1%;
+    height: 1%;
+    right: 20%;
+    bottom: 50%;
+}
+
+.star-5 {
+    width: 2%;
+    height: 4%;
+    right: 5%;
+    bottom: 35%;
+}
+
+.star-6, .star-7, .star-8 {
+    width: 10px;
+    height: 2px;
+    border-radius: 2%;
+    transform: rotate(-45deg);
+    box-shadow: 5px 0px 4px 1px #FFF;
+    animation-name: travel;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.star-6 {
+    right: 15%;
+    bottom: 15%;
+    animation-delay: -2s;
+}
+
+.star-7 {
+    right: 25%;
+    bottom: 60%;
+}
+
+.star-8 {
+    right: 45%;
+    top: 10%;
+    animation-delay: -4s;
+}
+
+@keyframes travel {
+    0% {
+        transform: rotate(-45deg) translateX(70px);
+    }
+
+    50% {
+        transform: rotate(-45deg) translateX(-20px);
+        box-shadow: 5px 0px 6px 1px #FFF;
+    }
+
+    100% {
+        transform: rotate(-45deg) translateX(-30px);
+        width: 2px;
+        height: 2px;
+        opacity: 0;
+        box-shadow: none;
+    }
+}
+
+#hide-checkbox:checked + .toggle {
+    background: #24D7F7;
+}
+
+#hide-checkbox:checked + .toggle .toggle-button {
+    background: #F7FFFF;
+    transform: translateX(116%);
+    box-shadow: 0 0 35px 5px rgba(255, 255, 255);
+}
+
+#hide-checkbox:checked + .toggle .toggle-button .crater {
+    transform: rotate(-45deg) translateX(70px);
+}
+
+#hide-checkbox:checked + .toggle .star {
+    animation: move 2s infinite;
+    transform: none;
+    box-shadow: none;
+}
+
+#hide-checkbox:checked + .toggle .star-1 {
+    width: 20%;
+    height: 10%;
+    border-radius: 10px;
+    background: #FFF;
+    left: 10%;
+    top: 25%;
+    box-shadow: none;
+}
+
+#hide-checkbox:checked + .toggle .star-2 {
+    width: 6%;
+    height: 12%;
+    background: #FFF;
+    left: 13%;
+    top: 23%;
+    box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-3 {
+    width: 8%;
+    height: 16%;
+    background: #FFF;
+    left: 17%;
+    top: 19%;
+    box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-4 {
+    width: 7%;
+    height: 14%;
+    background: #FFF;
+    left: 23%;
+    top: 21%;
+    box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-5 {
+    width: 30%;
+    height: 15%;
+    border-radius: 15px;
+    background: #FFF;
+    left: 15%;
+    bottom: 20%;
+    box-shadow: none;
+}
+
+#hide-checkbox:checked + .toggle .star-6 {
+    width: 9%;
+    height: 18%;
+    background: #FFF;
+    border-radius: 50%;
+    left: 19%;
+    bottom: 20%;
+    box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-7 {
+    width: 12%;
+    height: 24%;
+    background: #FFF;
+    border-radius: 50%;
+    left: 26%;
+    bottom: 20%;
+    box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+#hide-checkbox:checked + .toggle .star-8 {
+    width: 10%;
+    height: 20%;
+    background: #FFF;
+    border-radius: 50%;
+    left: 35%;
+    top: 59%;
+    box-shadow: -1px 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+@keyframes move {
+    0% {
+        transform: none;
+    }
+
+    25% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(-2px);
+    }
+}

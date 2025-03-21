@@ -100,6 +100,7 @@
 @extends('layout.header')
 <body>
 @extends('layout.hero')
+@extends('layout.chatbot')
 {{--@extends('layout.LogoTicker')--}}
 <!-- JS -->
 <script src="{{ asset('/assets/js/welcome/welcome.js') }}"></script>
