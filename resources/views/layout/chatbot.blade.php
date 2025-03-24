@@ -140,7 +140,7 @@
             const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer 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`,
+                    "Authorization": `Bearer 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`,
                     "HTTP-Referer": window.location.href,
                     "X-Title": "Chatbot",
                     "Content-Type": "application/json"
