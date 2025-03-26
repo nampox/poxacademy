@@ -51,8 +51,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20({{auth()->user()->id}}).jpg"
-                                 class="rounded-circle" height="30" alt="Avatar" loading="lazy"/>
+                            <img src="{{ asset('/assets/img/user.png') }}" class="rounded-circle" height="30" alt="Avatar" loading="lazy">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="profile/{{auth()->user()->id}}">My profile</a></li>
